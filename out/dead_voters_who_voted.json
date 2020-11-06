@@ -1,0 +1,26 @@
+[
+    {
+        "FirstName": "CATHERINE",
+        "LastName": "KELLY",
+        "BirthMonth": 4,
+        "BirthYear": "1915",
+        "ZipCode": "48708",
+        "Voted": true,
+        "ElectionDate": "11/3/2020",
+        "ApplicationReceived": "10/6/2020",
+        "BallotSent": "10/6/2020",
+        "BallotReceived": "10/13/2020"
+    },
+    {
+        "FirstName": "VIVA",
+        "LastName": "DYER",
+        "BirthMonth": 3,
+        "BirthYear": "1920",
+        "ZipCode": "48629",
+        "Voted": true,
+        "ElectionDate": "11/3/2020",
+        "ApplicationReceived": "9/15/2020",
+        "BallotSent": "9/24/2020",
+        "BallotReceived": "9/30/2020"
+    }
+]

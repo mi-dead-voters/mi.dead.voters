@@ -1,0 +1,146 @@
+[
+    {
+        "FirstName": "CORVIS",
+        "LastName": "NICHOLDS",
+        "BirthMonth": 1,
+        "BirthYear": "1914",
+        "ZipCode": "49082",
+        "Voted": false
+    },
+    {
+        "FirstName": "IRENE",
+        "LastName": "DROUGHT",
+        "BirthMonth": 10,
+        "BirthYear": "1917",
+        "ZipCode": "49251",
+        "Voted": false
+    },
+    {
+        "FirstName": "CATHERINE",
+        "LastName": "KELLY",
+        "BirthMonth": 4,
+        "BirthYear": "1915",
+        "ZipCode": "48708",
+        "Voted": true,
+        "ElectionDate": "11/3/2020",
+        "ApplicationReceived": "10/6/2020",
+        "BallotSent": "10/6/2020",
+        "BallotReceived": "10/13/2020"
+    },
+    {
+        "FirstName": "THOMAS",
+        "LastName": "LINDSEY",
+        "BirthMonth": 1,
+        "BirthYear": "1916",
+        "ZipCode": "48503",
+        "Voted": false
+    },
+    {
+        "FirstName": "SUE",
+        "LastName": "GIESSEL",
+        "BirthMonth": 4,
+        "BirthYear": "1917",
+        "ZipCode": "48602",
+        "Voted": false
+    },
+    {
+        "FirstName": "CLEO",
+        "LastName": "ALLEN",
+        "BirthMonth": 6,
+        "BirthYear": "1912",
+        "ZipCode": "48215",
+        "Voted": false
+    },
+    {
+        "FirstName": "FREDA",
+        "LastName": "GREEN",
+        "BirthMonth": 10,
+        "BirthYear": "1919",
+        "ZipCode": "48206",
+        "Voted": false
+    },
+    {
+        "FirstName": "SABINA",
+        "LastName": "NIENALTOWSKI",
+        "BirthMonth": 4,
+        "BirthYear": "1905",
+        "ZipCode": "48323",
+        "Voted": false
+    },
+    {
+        "FirstName": "VIVA",
+        "LastName": "DYER",
+        "BirthMonth": 3,
+        "BirthYear": "1920",
+        "ZipCode": "48629",
+        "Voted": true,
+        "ElectionDate": "11/3/2020",
+        "ApplicationReceived": "9/15/2020",
+        "BallotSent": "9/24/2020",
+        "BallotReceived": "9/30/2020"
+    },
+    {
+        "FirstName": "SUZANA",
+        "LastName": "KANALOS",
+        "BirthMonth": 10,
+        "BirthYear": "1916",
+        "ZipCode": "48831",
+        "Voted": false
+    },
+    {
+        "FirstName": "FLOY",
+        "LastName": "ROBINSON",
+        "BirthMonth": 7,
+        "BirthYear": "1909",
+        "ZipCode": "48458",
+        "Voted": false
+    },
+    {
+        "FirstName": "HELEN",
+        "LastName": "PEPERA",
+        "BirthMonth": 7,
+        "BirthYear": "1920",
+        "ZipCode": "48442",
+        "Voted": false
+    },
+    {
+        "FirstName": "ROSEMARY",
+        "LastName": "SITTER",
+        "BirthMonth": 7,
+        "BirthYear": "1918",
+        "ZipCode": "48240",
+        "Voted": false
+    },
+    {
+        "FirstName": "DONALD",
+        "LastName": "SEVERNS",
+        "BirthMonth": 12,
+        "BirthYear": "1917",
+        "ZipCode": "49707",
+        "Voted": false
+    },
+    {
+        "FirstName": "MARY",
+        "LastName": "THOMAS",
+        "BirthMonth": 8,
+        "BirthYear": "1909",
+        "ZipCode": "48120",
+        "Voted": false
+    },
+    {
+        "FirstName": "RUSSELL",
+        "LastName": "HUGHES",
+        "BirthMonth": 10,
+        "BirthYear": "1909",
+        "ZipCode": "48180",
+        "Voted": false
+    },
+    {
+        "FirstName": "JOSEPHINE",
+        "LastName": "KAHN",
+        "BirthMonth": 7,
+        "BirthYear": "1919",
+        "ZipCode": "48014",
+        "Voted": false
+    }
+]
