@@ -1,0 +1,405 @@
+
+
+
+
+
+<input data-val="true" data-val-number="The field CountyID must be a number." id="Voter_0__CountyID" name="Voter[0].CountyID" type="hidden" value="82" /><input data-val="true" data-val-number="The field DpaID must be a number." id="Voter_0__DpaID" name="Voter[0].DpaID" type="hidden" value="7252" /><input data-val="true" data-val-date="The field EffectiveRegistrationDate must be a date." id="Voter_0__EffectiveRegistrationDate" name="Voter[0].EffectiveRegistrationDate" type="hidden" value="1/8/1922 12:00:00 AM" /><input data-val="true" data-val-number="The field JurisdictionID must be a number." id="Voter_0__JurisdictionID" name="Voter[0].JurisdictionID" type="hidden" value="1405" /><input data-val="true" data-val-date="The field LastDayToVote must be a date." id="Voter_0__LastDayToVote" name="Voter[0].LastDayToVote" type="hidden" value="12/31/9999 11:59:59 PM" /><input id="Voter_0__MVIP" name="Voter[0].MVIP" type="hidden" value="False" /><input data-val="true" data-val-number="The field VoterAddressID must be a number." id="Voter_0__VoterAddressID" name="Voter[0].VoterAddressID" type="hidden" value="117620" /><input data-val="true" data-val-number="The field StreetRangeID must be a number." id="Voter_0__StreetRangeID" name="Voter[0].StreetRangeID" type="hidden" value="242734" /><input id="Voter_0__IdConfirmed" name="Voter[0].IdConfirmed" type="hidden" value="True" /><input id="Voter_0__IsPermAV" name="Voter[0].IsPermAV" type="hidden" value="True" /><input id="Voter_0__SkipPermAvText" name="Voter[0].SkipPermAvText" type="hidden" value="False" /><input id="HidePollingLocation" name="HidePollingLocation" type="hidden" value="False" />
+
+
+<div id="registeredVoter">
+
+	<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+	<input id="hfPageTitle" name="hfPageTitle" type="hidden" value="Your voter information" />
+	<input id="hfPageName" name="hfPageName" type="hidden" value="registeredvoter" />
+
+	<input id="hfMapType" name="hfMapType" type="hidden" value="" />
+
+	<input id="hfVoterAddressID" name="hfVoterAddressID" type="hidden" value="117620" />
+	<input id="hfSkipPermAvText" name="hfSkipPermAvText" type="hidden" value="False" />
+
+	<input id="hfClerkLatitude" name="hfClerkLatitude" type="hidden" value="42.368243" />
+	<input id="hfClerkLongitude" name="hfClerkLongitude" type="hidden" value="-83.077457" />
+	<input id="hfClerkRouteRequestTitle" name="hfClerkRouteRequestTitle" type="hidden" value="City Of Detroit Clerk" />
+	<input id="hfClerkAddress" name="hfClerkAddress" type="hidden" value="2978 W. Grand Blvd." />
+	<input id="hfClerkCityStateZip" name="hfClerkCityStateZip" type="hidden" value="Detroit, Michigan 48235" />
+
+	<input id="hfPollLatitude" name="hfPollLatitude" type="hidden" value="42.423050" />
+	<input id="hfPollLongitude" name="hfPollLongitude" type="hidden" value="-83.170050" />
+	<input id="hfPollRouteRequestTitle" name="hfPollRouteRequestTitle" type="hidden" value="Northwest Act Center" />
+	<input id="hfPollingAddress" name="hfPollingAddress" type="hidden" value="18100 Meyers Rd." />
+	<input id="hfPollingCityStateZip" name="hfPollingCityStateZip" type="hidden" value="Detroit, Michigan 48235" />
+
+	<h1 id="lblJurisdiction" class="body-title h3">
+		<strong>City Of Detroit,&nbsp;Wayne County</strong>
+	</h1>
+	<br /> <br />
+
+	<div class="row">
+		<div class="col-xl-8">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="card voter-info-card">
+						<div class="card-header" tabindex="0">
+							<div class="row">
+								<div class="col-xl-1 col-xs-4"><img src="/Content/Images/RegisterToVoteSmall.png" role="presentation" alt="" /></div>
+								<div class="col-xl-9 col-xs-7">
+									<span class="ccd-page-heading">Yes, you are registered!</span><br />
+								</div>
+							</div>
+						</div>
+						<div class="card-body" tabindex="0">
+							<h2>Elections calendar</h2>
+							<div id="lblElectionCalendar">
+								<table class='table' id='election - calendar'><thead><tr><th scope='col'>Election date</th><th scope='col'>Election description</th><th scope='col'>Ballot preview</th></tr></thead><tbody><tr><td data-label='Election Date'>11/3/2020</td><td data-label='&nbsp;&nbsp;Description'>State General</td><td data-label='&nbsp;&nbsp;Ballot Preview'><a class='btn btn-primary' href='/Voter/GetMvicBallot/7252/683/' target='_blank' type='button'>View</a></td></tr> </tbody></table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-xs-12">
+					<div class="card voter-info-card">
+						<div class="card-header" tabindex="0">
+							<img src="/Content/Images/PollingPlaceSmall.png" role="presentation" alt="" />
+							<strong>
+Your polling location							</strong>
+						</div>
+						<div class="card-body">
+							<div id="pollMapDiv" style="display:block;">
+								<div id="pollMapArea" class="theMap">
+											<div id="pollMap" style="height: 100%; position: relative;"></div>
+								</div>
+							</div>
+							<div id="pollingLocationFound">
+									<br />
+									<span id="lblWardPrecinct"> Precinct: 224</span>
+									<br />
+									<br />
+									<span id="lblPollingLocation">Northwest Act Center</span>
+									<br>
+									<span id="lblPollAddress">18100 Meyers Rd.</span>
+									<br />
+									<span id="lblPollCityStateZip">Detroit, Michigan 48235</span>
+									<br />
+									<br />
+									<strong>Phone:&nbsp;</strong> <span id="lblPollPhone"></span>
+									<br />
+									<strong>Open:&nbsp;</strong><span>7:00 AM to 8:00 PM on Election Day</span>
+									<br />
+									<br />
+										<img src="/Content/images/handicap.gif" alt="Location is HandiCap Accessible">
+&nbsp;&nbsp;&nbsp;									<a target="_blank" rel="noopener noreferrer" href="http://www.michigan.gov/sos/0,1607,7-127-1633_8716_45458---,00.html" title="Voting Equipment">
+										<img src="/content/images/VotingEquipmentImage.gif" border="0" alt="Voting Equipment">
+									</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-7 col-md-6 col-xs-12">
+					<div class="card voter-info-card">
+						<div class="card-header" tabindex="0">
+							<img src="/Content/Images/PollingPlaceSmall.png" role="presentation" alt="" />
+							<strong>
+								Your clerk
+							</strong>
+						</div>
+						<div class="card-body">
+									<br>
+									<span id="lblClerkName">Janice Winfrey, City Clerk</span>
+									<br>
+									<br>
+									<span id="lblClerkAddress">2978 W. Grand Blvd.</span>
+									<br>
+									<span id="lblClerkCityStateZip">Detroit, Michigan 48235</span>
+										<br />
+										<br />
+										<strong>Mailing address:</strong>
+										<br />
+										<span id="lblClerkMailAddress">2978 W. Grand Boulevard</span>
+										<br>
+										<span id="lblClerkMailCityStateZip">Detroit, Michigan 48202</span>
+									<br>
+									<br>
+									<strong>Phone:&nbsp;</strong> <span id="lblClerkPhone">(313) 224-3260</span>
+									<br>
+									<strong>Fax:&nbsp;</strong><span id="lblClerkFax">(313) 224-1466</span>
+									<br>
+									<strong>Email:&nbsp;</strong>
+									<span id="lblClerkEmail" class="emailAddr">
+											<a href="mailto:winfreyj@detroitmi.gov">winfreyj@detroitmi.gov</a>
+									</span><br />
+<strong>Business hours:</strong><div class='clerk-hours'>Mon. 9am-4:30pm<br />Tue. 9am-4:30pm<br />Wed. 9am-4:30pm<br />Thu. 9am-4:30pm<br />Fri. 9am-4:30pm<br /></div>										<br />
+										<span class="badge bg-gradient additional-location-badge">Drop box locations</span>
+										<br />
+<br />Adams Butzel Recreation Complex<br />10500 Lyndon St (at Meyers)<br />Detroit, Michigan&nbsp;48238<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Balduck Park<br />5271 Canyon St. (warren &amp; Chandler Park)<br />Detroit, Michigan&nbsp;48236<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Butzel Family Center<br />7737 Kercheval (at Van Dyke)<br />Detroit, Michigan&nbsp;48214<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Clark Park<br />1130 Clark St. (scotten &amp; Vernor)<br />Detroit, Michigan&nbsp;48209<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />City Clerk - Coleman A. Young Municipal Center<br />2 Woodward Ave. Ste. 200 (at Jefferson)<br />Detroit, Michigan&nbsp;48226<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Coleman A. Young Recreation Center<br />2751 Robert Bradby Dr. (at Lafayette Park)<br />Detroit, Michigan&nbsp;48207<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Considine Center<br />8904 Woodward Ave. (at Holbrook)<br />Detroit, Michigan&nbsp;48202<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Crowell Community Center<br />16630 Lahser Rd. (at W. McNichols)<br />Detroit, Michigan&nbsp;48219<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Davison Service Yard<br />8221 W. Davison (at Jeffries Fwy.)<br />Detroit, Michigan&nbsp;48238<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Department Of Elections<br />2978 W. Grand Blvd. (at Third)<br />Detroit, Michigan&nbsp;48202<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Detroit Water/sewer - Eastside Customer Center<br />13303 E. McNichols<br />Detroit, Michigan&nbsp;48205<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Farwell Recreation Center<br />2711 E. Outer Dr. (at Ryan Rd.)<br />Detroit, Michigan&nbsp;48234<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Greater Christ Baptist Church<br />3544 Iroquois Ave. (at Mack)<br />Detroit, Michigan&nbsp;48214<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Greater Grace Temple<br />23500 W. 7 Mile Rd. (at Shiawassee)<br />Detroit, Michigan&nbsp;48219<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Heilmann Recreation Center<br />19601 Crusade (at E. State Fair)<br />Detroit, Michigan&nbsp;48205<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Horatio Williams Center<br />1010 Antietam Ave. (at Chrysler)<br />Detroit, Michigan&nbsp;48207<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Kemeny Recreation Center<br />2260 S. Fort St. (at Schaefer)<br />Detroit, Michigan&nbsp;48217<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Northwest Activities Center<br />18100 Meyers Rd. (at Curtis)<br />Detroit, Michigan&nbsp;48235<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Palmer Park Community Center<br />1121 Merrill Plaisance St.<br />Detroit, Michigan&nbsp;48203<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Rouge Park Golf Course<br />11701 Burt Rd. (outer Dr. &amp; Plymouth)<br />Detroit, Michigan&nbsp;48228<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Tindal Recreation Center<br />10301 W. 7 Mile Rd. (at Meyers)<br />Detroit, Michigan&nbsp;48221<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Greater Emmanuel Institutional Cogic<br />19190 Schaefer Hwy<br />Detroit, Michigan&nbsp;48235<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Liberty Temple Baptist Church<br />17188 Greenfield Rd. (near 6 Mile/mcnichols)<br />Detroit, Michigan&nbsp;48235<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />North Rosedale Park Community House<br />18445 Scarsdale St. (near Puritan)<br />Detroit, Michigan&nbsp;48223<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Pistons Performance Center<br />690 Amsterdam St. (at Second Ave.)<br />Detroit, Michigan&nbsp;48202<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Unity Baptist Church<br />7500 Tireman Ave.<br />Detroit, Michigan&nbsp;48204<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Williams Recreation Center<br />8431 Rosa Parks Blvd. (at 14th)<br />Detroit, Michigan&nbsp;48206<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Wcccd Eastern Campus<br />5901 Conner St. (at I-94)<br />Detroit, Michigan&nbsp;48213<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Wcccd Northwest<br />8200 W. Outer Dr. (at Southfield Fwy.)<br />Detroit, Michigan&nbsp;48219<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />Wcccd Downtown<br />1001 W. Fort St. (at Lafayette)<br />Detroit, Michigan&nbsp;48226<br /><strong>Hours:</strong><div class='clerk-hours'>Available 24 Hours/7 Days a Week<br /></div><br />2 Woodward Ave.<br />Curbside Between Woodward And Randolph St.<br />Detroit, Michigan&nbsp;48226<br /><strong>Hours:</strong><div class='clerk-hours'>24/7</div><br />2978 W. Grand Blvd<br />Detroit, Michigan&nbsp;48202<br /><strong>Hours:</strong><div class='clerk-hours'>24/7</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-4">
+			<div class="card voter-info-card">
+				<div class="card-header" tabindex="0">
+					<img src="/Content/Images/AbsentBallotSmall.png" role="presentation" alt="" />
+					<strong>
+						Absentee ballot
+					</strong>
+				</div>
+				<div class="card-body">
+					<div id="lblAbsenteeVoterInformation">
+						<p class='maroon'>Your clerk has not recorded receiving your AV Application.<br /><br /></p>
+					</div>
+
+
+<p>You are on the permanent absentee voter list.  You will be sent an application for every election.</p>                </div>
+            </div>
+            <br /><br />
+            <br /><br />
+            <button id="collapseButton" aria-expanded="false" onClick="document.getElementById('voting-district').toggle();" class="btn btn-primary">
+                View voting district information
+            </button>
+            <som-collapse id="voting-district" collapsed="true">
+                <div class="pt-3">
+                    <div class="districtCell">
+                        <span id="lblCntyTitle" >
+                            <strong>County:&nbsp;&nbsp;&nbsp;</strong>
+                        </span>
+                        <span id="lblCountyName" aria-labelledby="lblCntyTitle"> Wayne County</span>
+                        <br />
+
+						<span id="lbljurisTitle" >
+							<strong>Jurisdiction:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblJurisdName" aria-labelledby="lbljurisTitle">City Of Detroit</span>
+						<br />
+
+						<span id="lblWardTitle" class='disabledFont' title='City Of Detroit does not have wards.'>
+							<strong>Ward:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblWardNumber" aria-labelledby="lblWardTitle">
+<span class="sr-only">,,Not applicable,</span> 						</span>
+						<br />
+
+						<span id="lblPctTitle" >
+							<strong>Precinct:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblPrecinctNumber" aria-labelledby="lblPctTitle"> 224</span>
+						<br />
+
+						<span id="lblVillageTitle" class='disabledFont'  title='You do not have a Village district.'>
+							<strong>Village:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblVillageName" aria-labelledby="lblVillageTitle">
+<span class="sr-only">,,Not applicable,</span> 
+						</span>
+						<br />
+
+						<span id="lblMetroTitle" class='disabledFont' title='You do not have a Metropolitan district.'>
+							<strong>Metropolitan:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblMetroName" aria-labelledby="lblMetroTitle">
+<span class="sr-only">,,Not applicable,</span> 						</span>
+						<hr />
+
+						<span id="lblSchoolTitle" >
+							<strong>School:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblSchoolDistrict" aria-labelledby="lblSchoolTitle"> Detroit Community School District</span>
+						<br />
+
+						<span id="lblIsdTitle" >
+							<strong>Intermediate school:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblIsdName" aria-labelledby="lblIsdTitle">
+Wayne Resa						</span>
+						<br />
+
+						<span id="lblCommCollegeTitle" >
+							<strong>Community college:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblCommCollegeName" aria-labelledby="lblCommCollegeTitle">
+Wayne County Community College						</span>
+						<br />
+
+						<span id="lblLibraryTitle" class='disabledFont' title='You do not have a Libray district.'>
+							<strong>Library:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblLibraryName">
+<span class="sr-only">,,Not applicable,</span> 						</span>
+						<hr />
+						<span id="lblCntyCommTitle" >
+							<strong>County commissioner:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblCountyCommDistrict" aria-labelledby="lblCntyCommTitle">
+6th District						</span>
+						<br />
+
+						<span for="lblHouseDistrict" id="lblHouseTitle" >
+							<strong>State house:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblHouseDistrict" aria-labelledby="lblHouseTitle"> 7th District</span>
+						<br />
+
+						<span for="lblSenateDistrict" id="lblSenateTitle" >
+							<strong> State senate:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblSenateDistrict" aria-labelledby="lblSenateTitle"> 4th District</span>
+						<br />
+
+						<span for="lblCongressDistrict" id="lblCongressTitle" >
+							<strong>US Congress:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblCongressDistrict" aria-labelledby="lblCongressTitle"> 14th District</span>
+						<hr />
+
+						<span for="lblAppealsName" id="lblAppealsTitle" >
+							<strong>Court of appeals:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblAppealsName" aria-labelledby="lblAppealsTitle">
+1st District						</span>
+						<br />
+
+						<span for="lblCircuitName" id="lblCircuitTitle" >
+							<strong>Circuit court:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblCircuitName" aria-labelledby="lblCircuitTitle">
+3rd Circuit						</span>
+						<br />
+
+						<span for="lblProbateName" id="lblProbateTitle" >
+							<strong>Probate court:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblProbateName" aria-labelledby="lblProbateTitle">
+Wayne County Probate Court						</span>
+						<br />
+
+						<span for="lblProbateDistName" id="lblProbateDistTitle" class='disabledFont' title='You do not have a Probate District Court district.'>
+							<strong>Probate district court:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblProbateDistName" aria-labelledby="lblProbateDistTitle">
+<span class="sr-only">,,Not applicable,</span> 						</span>
+						<br />
+
+						<span for="lblDistCourtName" id="lblDistCourtTitle" >
+							<strong>District court:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblDistCourtName" aria-labelledby="lblDistCourtTitle">
+36th District						</span>
+						<br />
+
+						<span for="lblMuniCourtName" id="lblMuniCourtTitle" class='disabledFont' title='You do not have a Municipal Court district.'>
+							<strong>Municipal court:&nbsp;&nbsp;&nbsp;</strong>
+						</span>
+						<span id="lblMuniCourtName" aria-labelledby="lblMuniCourtTitle">
+<span class="sr-only">,,Not applicable,</span> 						</span>
+					</div>
+				</div>
+			</som-collapse>
+		</div>
+	</div>
+
+<div class="modal fade custom-model-class" id="RouteRequest" tabindex="-1" role="dialog" aria-labelledby="RouteRequest">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header route-request-title">
+                Directions to <span id="RouteRequestTitle"></span>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <span id="RouteRequestDetail1" class="route-description-area" />
+                    <br />
+                    <span id="RouteRequestDetail2" class="route-description-area" />
+                </div>
+                <br />
+                <div>
+                    <label for="StartingPoint">Enter a starting point</label>
+                </div>
+                <input id="StartingPoint" type="text" autofocus />
+            </div>
+            <div class="modal-footer">
+                <button id="btnRouteRequest" role="button" type="button" formtarget="_self" class="btn btn-primary">Get Route</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade custom-model-class" id="RouteContainer" tabindex="-1" role="dialog" aria-labelledby="RouteContainer">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+            </div>
+            <div class="modal-body">
+                <div  class="theMap">
+                    <div id="routeMap"></div>
+                </div>
+
+                <div id="routeDirectionsContainer" class="panel">
+                    <div class="panel-heading">
+                        Directions to <span id="DirectionsTitle"></span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="routeDirectionsItinerary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	<som-modal headline="Confirm ID" id="confirm-id-modal" size="lg">
+		<div slot="close-component">
+			<div class="custom-close-button">Close</div>
+		</div>
+		<div id="id-confirmed-modal-body">
+			<p>
+				You have not yet met the federal identification requirement, and you will not be able to vote in Michigan until
+				you have satisfied this requirement.
+			</p>
+			<p>
+				You may satisfy the requirement by providing the information or documents listed below to your local clerk.
+			</p>
+			<p>
+				Your Name _________________________________________
+			</p>
+			<p>
+				Provide one of the following numbers:
+			</p>
+			<p>
+				Your Michigan driver’s license number or Michigan state identification card number:<br />
+				___ - ___ ___ ___ - ___ ___ ___ - ___ ___ ___ - ___ ___ ___
+			</p>
+			<p>
+				OR
+			</p>
+			<p>
+				Last four digits of your social security number:<br />
+				XXX-XX-___________
+			</p>
+			<p>
+				Or provide a COPY of one of the following to your local clerk:
+			</p>
+			<p>
+				• a current and valid photo identification (such as a driver’s license or personal ID card from any state)<br />
+				• a paycheck stub, utility bill, bank statement or a government document that lists your name and address.
+			</p>
+			<p>
+				***DO NOT SEND ORIGINAL DOCUMENTS***
+			</p>
+			<p>
+				You may mail, hand deliver, fax, or scan or take a picture and send via email this form or any other document you
+				are using to satisfy the requirement. If you have been issued a ballot, do not return your documentation in the
+				same envelope as the ballot to ensure proper processing.
+			</p>
+		</div>
+		<br />
+		<br />
+	</som-modal>
+
+	<script src="/bundles/voterJS?v=CWBNW9RwFCeao40lS_ZkSV_cY5fG8QtDD_X7oC9KjCM1"></script>
+
+	<script src="/bundles/BingMapJS?v=XgqZHpFMh6PgxqFv2EbFUE-JrwdZK88VAIk5Ee20hLA1"></script>
+
+</div>
